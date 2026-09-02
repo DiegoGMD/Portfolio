@@ -7,6 +7,7 @@
   --color-sage-green: #88AB75;
   --color-pacific-cyan: #2D93AD;
   --color-neon-ice: #4EFFEF;
+  --color-space-indigo: #003153;
 
   --radius: 14px;
   --font-display: "Roboto Slab", system-ui, sans-serif;
@@ -29,7 +30,7 @@ body {
 }
 
 body {
-  background-color: var(--color-carbon-black);
+  background-color: var(--color-space-indigo);
   font-family: var(--font-display);
   color: var(--color-text-dark);
   -webkit-font-smoothing: antialiased;
@@ -54,7 +55,7 @@ body {
   display: flex;
   align-items: left;
   gap: 28px;
-  background-color: var(--color-carbon-black);
+  background-color: var(--color-space-indigo);
   padding: 32px 0;
 }
 
@@ -90,7 +91,7 @@ body {
 
 /* Content */
 .content {
-  background-color: var(--color-carbon-black);
+  background-color: var(--color-space-indigo);
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -98,7 +99,8 @@ body {
   flex: 1;
 }
 
-.content h2 h3{
+.content h2,
+.content h3 {
   font-family: var(--font-mono);
 }
 
@@ -227,11 +229,11 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    elipse at center,
+  /*background: radial-gradient(
+    ellipse at center,
     transparent 55%,
     rgba(0, 0, 0, 0.45) 100%
-  );
+  );*/
   pointer-events: none;
   z-index: 3;
 }
@@ -245,6 +247,11 @@ body {
   gap: 10px;
 }
 
+.btn-row > div {
+  flex: 1;
+  min-width: 0;
+}
+
 .btn-row .btn {
   flex: 1;
   min-height: 250px;
@@ -255,9 +262,13 @@ body {
   font-weight: 500;
 }
 
+.btn + .location {
+  margin-top: 12px;
+}
+
 /* Footer */
 .footer {
-  background-color: var(--color-carbon-black);
+  background-color: var(--color-space-indigo);
   text-align: center;
   padding: 20px;
   font-size: 0.95rem;
@@ -320,11 +331,11 @@ body {
 .flag-spa .location,
 .flag-cat .location,
 .flag-gb .location {
-  color: var(--color-carbon-black);
+  color: var(--color-space-indigo);
 }
 
-.flag-es:hover,
-.flag-val:hover {
+.flag-spa:hover,
+.flag-cat:hover {
   background-color: transparent;
 }
 .flag-gb:hover {
@@ -349,7 +360,7 @@ body {
 
 .icon-download .btn-title,
 .icon-download .location {
-  color: var(--color-carbon-black);
+  color: var(--color-space-indigo);
 }
 
 .icon-download:hover {
