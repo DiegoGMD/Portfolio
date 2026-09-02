@@ -1,0 +1,350 @@
+:root {
+  --color-carbon-black: #1C1B19;
+  --color-red-tomato: #F95738;
+  --color-amber-gold: #FFBF00;
+  --color-bright-amber: #FFCF00;
+  --color-sage-green: #88AB75;
+  --color-pacific-cyan: #2D93AD;
+
+  --radius: 14px;
+  --font-display: "Roboto Slab", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /*
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-carbon-black);
+  font-family: var(--font-display);
+  color: var(--color-text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  width: 65%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar */
+.top-bar {
+  height: 20px;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: left;
+  gap: 28px;
+  background-color: var(--color-carbon-black);
+  padding: 32px 0;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-text h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  color: #f5f3ef;
+  line-height: 1;
+  font-weight: 600;
+  margin: 12px 0px 12px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: rgba(236, 229, 216, 0.7);
+    max-width: 60ch;
+}
+
+.location {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-red-tomato);
+  margin: 0px;
+}
+
+/* Content */
+.content {
+  background-color: var(--color-carbon-black);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.content h2 h3{
+  font-family: var(--font-mono);
+}
+
+.text-content {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: rgba(236, 229, 216, 0.7);
+}
+
+.skills-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.skills-group-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: rgba(245, 243, 239, 0.04);
+  font-size: 0.85rem;
+  color: #f5f3ef;
+}
+
+.chip-level {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 18px; /* reserva espacio para los dos puntos "fantasma" del box-shadow */
+  background: rgba(245, 243, 239, 0.2);
+}
+
+.chip-level-1 {
+  background: var(--accent);
+  box-shadow: 9px 0 0 rgba(245, 243, 239, 0.2), 18px 0 0 rgba(245, 243, 239, 0.2);
+}
+.chip-level-2 {
+  background: var(--accent);
+  box-shadow: 9px 0 0 var(--accent), 18px 0 0 rgba(245, 243, 239, 0.2);
+}
+.chip-level-3 {
+  background: var(--accent);
+  box-shadow: 9px 0 0 var(--accent), 18px 0 0 var(--accent);
+}
+
+.chip-level span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(245, 243, 239, 0.2);
+}
+
+.chip-level-1 span:nth-child(1),
+.chip-level-2 span:nth-child(-n+2),
+.chip-level-3 span:nth-child(-n+3) {
+  background: var(--accent);
+}
+
+/* Category accents */
+.skills-group--lang     { --accent: var(--color-pacific-cyan); }
+.skills-group--android  { --accent: var(--color-amber-gold); }
+.skills-group--data     { --accent: var(--color-sage-green); }
+.skills-group--tools    { --accent: var(--color-red-tomato); }
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-amber-gold);
+  border-radius: var(--radius);
+  min-height: 300px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+
+  /* CRT TV frame */
+  position: relative;
+  overflow: hidden;
+  border: 4px solid #4a4a4a;
+  box-shadow:
+    inset 0 0 0 2px #2a2a2a,
+    inset 0 0 20px rgba(0, 0, 0, 0.6),
+    0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Scanlines overlay on the "screen" area */
+.btn::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25) 0px,
+    rgba(0, 0, 0, 0.25) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Subtle screen vignette/glow to sell the glass curvature */
+.btn::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    elipse at center,
+    transparent 55%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+.btn:hover {
+  background-color: var(--color-bright-amber);
+}
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-row .btn {
+  flex: 1;
+  min-height: 250px;
+}
+
+.btn-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-carbon-black);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95rem;
+  color: #f5f3ef;
+}
+
+/* Placeholder anchor sections */
+.page-section {
+  height: 0;
+}
+
+/* Flag backgrounds — built from the existing palette, no new colors */
+
+.flag-spa {
+  background: linear-gradient(
+    to bottom,
+    var(--color-red-tomato) 0%, var(--color-red-tomato) 25%,
+    var(--color-amber-gold) 25%, var(--color-amber-gold) 75%,
+    var(--color-red-tomato) 75%, var(--color-red-tomato) 100%
+  );
+}
+
+.flag-cat {
+  /* Senyera: 9 alternating stripes, yellow on the outside */
+  background: linear-gradient(
+    to bottom,
+    var(--color-amber-gold) 0%, var(--color-amber-gold) 11.11%,
+    var(--color-red-tomato) 11.11%, var(--color-red-tomato) 22.22%,
+    var(--color-amber-gold) 22.22%, var(--color-amber-gold) 33.33%,
+    var(--color-red-tomato) 33.33%, var(--color-red-tomato) 44.44%,
+    var(--color-amber-gold) 44.44%, var(--color-amber-gold) 55.55%,
+    var(--color-red-tomato) 55.55%, var(--color-red-tomato) 66.66%,
+    var(--color-amber-gold) 66.66%, var(--color-amber-gold) 77.77%,
+    var(--color-red-tomato) 77.77%, var(--color-red-tomato) 88.88%,
+    var(--color-amber-gold) 88.88%, var(--color-amber-gold) 100%
+  );
+}
+
+.flag-gb {
+  /* Union Jack, abstracted with the site palette instead of navy */
+  background-color: var(--color-pacific-cyan);
+  background-image:
+    /* Red straight cross — topmost */
+    linear-gradient(to right, transparent 44%, var(--color-red-tomato) 44%, var(--color-red-tomato) 56%, transparent 56%),
+    linear-gradient(to bottom, transparent 44%, var(--color-red-tomato) 44%, var(--color-red-tomato) 56%, transparent 56%),
+    /* White fimbriation for the straight cross — wide, masks the diagonals near center */
+    linear-gradient(to right, transparent 36%, #f5f3ef 36%, #f5f3ef 64%, transparent 64%),
+    linear-gradient(to bottom, transparent 36%, #f5f3ef 36%, #f5f3ef 64%, transparent 64%),
+    /* Diagonal red stripes — thin, full box, sit behind the straight cross */
+    linear-gradient(to bottom right, transparent 47%, var(--color-red-tomato) 47%, var(--color-red-tomato) 53%, transparent 53%),
+    linear-gradient(to bottom left, transparent 47%, var(--color-red-tomato) 47%, var(--color-red-tomato) 53%, transparent 53%),
+    /* Diagonal white fimbriation — behind the diagonal red, above the field */
+    linear-gradient(to bottom right, transparent 41%, #f5f3ef 41%, #f5f3ef 59%, transparent 59%),
+    linear-gradient(to bottom left, transparent 41%, #f5f3ef 41%, #f5f3ef 59%, transparent 59%);
+}
+
+.flag-spa .btn-title,
+.flag-cat .btn-title,
+.flag-gb .btn-title,
+.flag-spa .location,
+.flag-cat .location,
+.flag-gb .location {
+  color: var(--color-carbon-black);
+}
+
+.flag-es:hover,
+.flag-val:hover {
+  background-color: transparent;
+}
+.flag-gb:hover {
+  background-color: var(--color-pacific-cyan);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    border-width: 8px;
+  }
+
+  .btn-row {
+    flex-direction: column;
+  }
+
+  .btn-row .btn {
+    min-height: 160px;
+  }
+}
