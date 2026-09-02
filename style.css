@@ -1,10 +1,12 @@
 :root {
   --color-carbon-black: #1C1B19;
   --color-red-tomato: #F95738;
+  --color-red-watermelon: #EF2D56;
   --color-amber-gold: #FFBF00;
   --color-bright-amber: #FFCF00;
   --color-sage-green: #88AB75;
   --color-pacific-cyan: #2D93AD;
+  --color-neon-ice: #4EFFEF;
 
   --radius: 14px;
   --font-display: "Roboto Slab", system-ui, sans-serif;
@@ -175,10 +177,10 @@ body {
 }
 
 /* Category accents */
-.skills-group--lang     { --accent: var(--color-pacific-cyan); }
-.skills-group--android  { --accent: var(--color-amber-gold); }
-.skills-group--data     { --accent: var(--color-sage-green); }
-.skills-group--tools    { --accent: var(--color-red-tomato); }
+.skills-group--lang     { --accent: var(--color-amber-gold); }
+.skills-group--android  { --accent: var(--color-pacific-cyan); }
+.skills-group--data     { --accent: var(--color-red-tomato); }
+.skills-group--tools    { --accent: var(--color-sage-green); }
 
 .btn {
   display: flex;
@@ -327,6 +329,31 @@ body {
 }
 .flag-gb:hover {
   background-color: var(--color-pacific-cyan);
+}
+
+.icon-download {
+  background-color: var(--color-red-tomato);
+  background-image:
+    /* Stem */
+    linear-gradient(to right, transparent 40%, var(--color-red-watermelon) 40%, var(--color-red-watermelon) 60%, transparent 60%),
+    /* Arrowhead */
+    conic-gradient(from 315deg at 50% 100%, var(--color-red-watermelon) 0 90deg, transparent 90deg);
+  background-repeat: no-repeat;
+  background-size:
+    100% 50%,
+    60% 50%;
+  background-position:
+    top,
+    center bottom;
+}
+
+.icon-download .btn-title,
+.icon-download .location {
+  color: var(--color-carbon-black);
+}
+
+.icon-download:hover {
+  background-color: var(--color-red-tomato);
 }
 
 /* Responsive */
