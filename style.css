@@ -8,6 +8,7 @@
   --color-pacific-cyan: #2D93AD;
   --color-neon-ice: #4EFFEF;
   --color-space-indigo: #003153;
+  --color-white: #FFFFFF;
 
   --radius: 14px;
   --font-display: "Roboto Slab", system-ui, sans-serif;
@@ -85,7 +86,7 @@ body {
   font-size: 12px;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--color-red-tomato);
+  color: var(--btn-location, var(--color-red-tomato));
   margin: 0px;
 }
 
@@ -102,6 +103,15 @@ body {
 .content h2,
 .content h3 {
   font-family: var(--font-mono);
+}
+
+.content ul,
+.content li {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  color: rgba(236, 229, 216, 0.7);
+  margin: 0px;
 }
 
 .text-content {
@@ -189,11 +199,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-amber-gold);
+  background-color: var(--btn-bg, var(--color-amber-gold));
   border-radius: var(--radius);
   min-height: 300px;
   text-decoration: none;
-  color: white;
+  color: var(--btn-text, white);
   text-align: center;
   padding: 10px;
   transition: background-color 0.15s ease, transform 0.15s ease;
@@ -239,7 +249,35 @@ body {
 }
 
 .btn:hover {
-  background-color: var(--color-bright-amber);
+  background-color: var(--btn-bg-hover, var(--color-bright-amber));
+}
+
+.btn-yellow {
+  --btn-bg: var(--color-amber-gold);
+  --btn-bg-hover: var(--color-bright-amber);
+  --btn-text: var(--color-white);
+  --btn-location: var(--color-red-tomato);
+}
+
+.btn-blue {
+  --btn-bg: var(--color-pacific-cyan);
+  --btn-bg-hover: var(--color-neon-ice);
+  --btn-text: var(--color-white);
+  --btn-location: var(--color-neon-ice);
+}
+
+.btn-green {
+  --btn-bg: var(--color-sage-green);
+  --btn-bg-hover: var(--color-sage-green);
+  --btn-text: var(--color-white);
+  --btn-location: var(--color-carbon-black);
+}
+
+.btn-red {
+  --btn-bg: var(--color-red-tomato);
+  --btn-bg-hover: var(--color-red-watermelon);
+  --btn-text: var(--color-white);
+  --btn-location: var(--color-amber-gold);
 }
 
 .btn-row {
