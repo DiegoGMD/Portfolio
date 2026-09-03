@@ -2,9 +2,11 @@
   --color-carbon-black: #1C1B19;
   --color-red-tomato: #F95738;
   --color-red-watermelon: #EF2D56;
+  --color-rubi-red: #A31621;
   --color-amber-gold: #FFBF00;
   --color-bright-amber: #FFCF00;
   --color-sage-green: #88AB75;
+  --color-emerald-depths: #285943;
   --color-pacific-cyan: #2D93AD;
   --color-neon-ice: #4EFFEF;
   --color-space-indigo: #003153;
@@ -95,13 +97,29 @@ body {
 
 .location {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--btn-location, var(--color-red-tomato));
   margin: 0px;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+
+.location-yellow {
+  --btn-location: var(--color-amber-gold);
+}
+
+.location-blue {
+  --btn-location: var(--color-pacific-cyan);
+}
+
+.location-red {
+  --btn-location: var(--color-red-tomato);
+}
+
+.location-green {
+  --btn-location: var(--color-sage-green);
 }
 
 /* Content */
@@ -284,14 +302,14 @@ body {
   --btn-bg: var(--color-sage-green);
   --btn-bg-hover: var(--color-sage-green);
   --btn-text: var(--color-white);
-  --btn-location: var(--color-carbon-black);
+  --btn-location: var(--color-emerald-depths);
 }
 
 .btn-red {
   --btn-bg: var(--color-red-tomato);
   --btn-bg-hover: var(--color-red-watermelon);
   --btn-text: var(--color-white);
-  --btn-location: var(--color-amber-gold);
+  --btn-location: var(--color-rubi-red);
 }
 
 .btn-row {
@@ -401,9 +419,9 @@ body {
   background-color: var(--color-red-tomato);
   background-image:
     /* Stem */
-    linear-gradient(to right, transparent 40%, var(--color-red-watermelon) 40%, var(--color-red-watermelon) 60%, transparent 60%),
+    linear-gradient(to right, transparent 40%, var(--color-rubi-red) 40%, var(--color-rubi-red) 60%, transparent 60%),
     /* Arrowhead */
-    conic-gradient(from 315deg at 50% 100%, var(--color-red-watermelon) 0 90deg, transparent 90deg);
+    conic-gradient(from 315deg at 50% 100%, var(--color-rubi-red) 0 90deg, transparent 90deg);
   background-repeat: no-repeat;
   background-size:
     100% 50%,
