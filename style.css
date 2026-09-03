@@ -6,11 +6,14 @@
   --color-amber-gold: #FFBF00;
   --color-bright-amber: #FFCF00;
   --color-sage-green: #88AB75;
+  --color-jungle-green: #00A86B;
   --color-emerald-depths: #285943;
   --color-pacific-cyan: #2D93AD;
   --color-neon-ice: #4EFFEF;
   --color-space-indigo: #003153;
+  --color-imperial-blue: #002366;
   --color-white: #FFFFFF;
+  --color-silver: #B1ACA3;
 
   --radius: 14px;
   --font-display: "Roboto Slab", system-ui, sans-serif;
@@ -91,7 +94,7 @@ body {
 .subtitle {
     font-size: 1rem;
     line-height: 1.65;
-    color: rgba(236, 229, 216, 0.7);
+    color: var(--color-silver);
     max-width: 60ch;
 }
 
@@ -122,6 +125,10 @@ body {
   --btn-location: var(--color-sage-green);
 }
 
+.location-grey {
+  --btn-location: var(--color-silver);
+}
+
 /* Content */
 .content {
   background-color: transparent;
@@ -149,7 +156,7 @@ body {
 .text-content {
     font-size: 1rem;
     line-height: 1.65;
-    color: rgba(236, 229, 216, 0.7);
+    color: var(--color-silver);
 }
 
 .skills-group {
@@ -293,14 +300,14 @@ body {
 
 .btn-blue {
   --btn-bg: var(--color-pacific-cyan);
-  --btn-bg-hover: var(--color-neon-ice);
+  --btn-bg-hover: var(--color-imperial-blue);
   --btn-text: var(--color-white);
   --btn-location: var(--color-neon-ice);
 }
 
 .btn-green {
   --btn-bg: var(--color-sage-green);
-  --btn-bg-hover: var(--color-sage-green);
+  --btn-bg-hover: var(--color-jungle-green);
   --btn-text: var(--color-white);
   --btn-location: var(--color-emerald-depths);
 }
